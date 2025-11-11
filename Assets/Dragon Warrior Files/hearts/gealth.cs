@@ -19,7 +19,6 @@ public class gealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
 
     }
     public void TakeDamage(float _damage)

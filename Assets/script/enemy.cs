@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class enemy : MonoBehaviour
 {
     public class gealth : MonoBehaviour
@@ -8,14 +7,11 @@ public class enemy : MonoBehaviour
         public float curentheals;
         private Animator anim;
         private bool dead;
-
         // Start is called before the first frame update
         void Start()
         {
             curentheals = starthealth;
             anim = GetComponent<Animator>();
-
-
         }
 
         // Update is called once per frame
@@ -33,7 +29,7 @@ public class enemy : MonoBehaviour
             }
             if (curentheals <= 0)
             {
-                Destroy(GameObject);
+                Destroy(gameObject);
                 dead = true;
                 GetComponent<plauercontrilir>().enabled = false;
             }

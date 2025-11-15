@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
+    public float damageEnemy;
     public float speed;
     Rigidbody2D rb;
     public int direction = 1;
@@ -24,9 +25,10 @@ public class bullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("bots")){ Destroy(gameObject); }
-            
-        
+        if (collision.gameObject.CompareTag("bots"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
 

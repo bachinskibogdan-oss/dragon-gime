@@ -10,6 +10,8 @@ TagManager:
   - bots
   - platform
   - bullet
+  - botszone
+  - takedm
   layers:
   - Default
   - TransparentFX

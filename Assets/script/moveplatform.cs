@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class moveplatform : MonoBehaviour
 {
-    public Transform pos1, pos2;
+    public Transform pos1;
+    public Transform  pos2;
     public float speed = 1f;
     public Transform startpos;
 

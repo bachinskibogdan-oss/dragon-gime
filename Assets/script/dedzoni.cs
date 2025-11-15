@@ -2,19 +2,25 @@ using UnityEngine;
 
 public class dedzoni : MonoBehaviour
 {
-    private moveplatform player;
+    public float damageEnemy;
+    public Transform pos3, pos4;
+
 
     private void Start()
     {
-        player = GetComponent<moveplatform>();
-        player.transform.position = new Vector2(0.76f, -0.7f);
+     
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("player"))
         {
-            collision.transform.position = player.transform.position;
+            collision.GetComponent<gealth>().TakeDamage(damageEnemy);
+            Destroy(gameObject);
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(pos3.position, pos4.position);
     }
 }

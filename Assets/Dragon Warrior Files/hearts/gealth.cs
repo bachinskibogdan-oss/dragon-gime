@@ -31,8 +31,10 @@ public class gealth : MonoBehaviour
         if (curentheals <= 0) { 
             dead = true;
             GetComponent <plauercontrilir>().enabled = false;
+            Destroy(gameObject);
         }
-         
+       
+
     }
     public void AddHils(float _Values) { 
         curentheals = Mathf.Clamp(curentheals + _Values, 0, starthealth);

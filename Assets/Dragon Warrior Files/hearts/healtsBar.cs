@@ -17,7 +17,7 @@ public class healtsBar : MonoBehaviour
     void Update()
     {
         currnetHeart.fillAmount = playerHealth.curentheals / 10;
-
+        
 
     }
 }

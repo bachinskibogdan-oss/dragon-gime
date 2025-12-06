@@ -12,6 +12,8 @@ TagManager:
   - bullet
   - botszone
   - takedm
+  - plant
+  - dedzome
   layers:
   - Default
   - TransparentFX

@@ -28,6 +28,7 @@ public class bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("bots"))
         {
             Destroy(gameObject);
+            Destroy(collision.gameObject);
         }
     }
 

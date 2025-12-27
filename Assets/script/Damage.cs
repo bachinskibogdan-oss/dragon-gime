@@ -6,6 +6,7 @@ public class Damage : MonoBehaviour
     public float damageEnemy;
     public float curentheals;
     public bool isSpikel;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,8 @@ public class Damage : MonoBehaviour
         if (collision.gameObject.CompareTag("player"))
             {
             collision.GetComponent<gealth>().TakeDamage(damageEnemy);
-            }
+
+        }
     }
   
 

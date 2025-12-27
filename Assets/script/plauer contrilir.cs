@@ -9,13 +9,14 @@ public class plauercontrilir : MonoBehaviour
     private Rigidbody2D rb;//компонент Rigidbody2D
     public bool isGroundedl;//на земле или нет?
     private Animator anim;//комонент Animator
-
-
+    public AudioClip soundsjumpes;
+    public AudioSource ass;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();//получаем Rigidbody2D
         anim = GetComponent<Animator>();//получаем Animator
+        ass = GetComponent<AudioSource>();
     }
 
     
@@ -57,7 +58,6 @@ public class plauercontrilir : MonoBehaviour
     private void Move(){
         float horiz = Input.GetAxis("Horizontal");//Получаем ввод с клавы   
         rb.velocity = new Vector2(horiz * moveSpeed, rb.velocity.y);//изменяем скорость по x
-
         anim.SetBool("Walk",horiz != 0);//передаём состояние бега в Animator
 
         //поворот в сторону движения
@@ -77,6 +77,8 @@ public class plauercontrilir : MonoBehaviour
         //Прыжок
         if (isGroundedl == true && Input.GetKeyDown(KeyCode.Space))
         {
+            ass.PlayOneShot(soundsjumpes);
+
             rb.AddForce(Vector2.up * jumpForce,ForceMode2D.Impulse);
             anim.SetBool("Jump", true);//активируем прыжок
         }

@@ -11,15 +11,18 @@ public class plauercontrilir : MonoBehaviour
     private Animator anim;//комонент Animator
     public AudioClip soundsjumpes;
     public AudioSource ass;
+    public AudioClip soundswalk;
+    public AudioSource aswalk;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();//получаем Rigidbody2D
         anim = GetComponent<Animator>();//получаем Animator
         ass = GetComponent<AudioSource>();
+        aswalk = GetComponent<AudioSource>();
     }
 
-    
+  
     void Update()
     {
         Move();
@@ -31,6 +34,7 @@ public class plauercontrilir : MonoBehaviour
         if (collision.gameObject.CompareTag("platform"))
         {
            this.transform.parent = collision.transform;
+            isGroundedl = true;
         }
 
 
@@ -46,6 +50,7 @@ public class plauercontrilir : MonoBehaviour
         if (collision.gameObject.CompareTag("platform"))
         {
             this.transform.parent = null;
+            isGroundedl = false;
         }
 
         if (collision.gameObject.CompareTag("Ground"))
@@ -58,6 +63,7 @@ public class plauercontrilir : MonoBehaviour
     private void Move(){
         float horiz = Input.GetAxis("Horizontal");//ѕолучаем ввод с клавы   
         rb.velocity = new Vector2(horiz * moveSpeed, rb.velocity.y);//измен€ем скорость по x
+       aswalk.PlayOneShot(soundswalk);
         anim.SetBool("Walk",horiz != 0);//передаЄм состо€ние бега в Animator
 
         //поворот в сторону движени€

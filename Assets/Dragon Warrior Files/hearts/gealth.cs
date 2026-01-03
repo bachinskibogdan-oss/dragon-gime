@@ -51,7 +51,7 @@ public class gealth : MonoBehaviour
     }
     public void AddHils(float _Values) { 
         curentheals = Mathf.Clamp(curentheals + _Values, 0, starthealth);
-
+        
     }
     private IEnumerator Flashes()
     {

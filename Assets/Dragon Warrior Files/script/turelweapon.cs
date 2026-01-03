@@ -7,8 +7,9 @@ public class turelweapon : MonoBehaviour
     public GameObject bullet;
     public float firetime = 1f;
     public Vector2 shotdirection = Vector2.left;
-
+        public float damageEnemy;
     private float nextfiretime;
+    public float curentheals;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,4 +36,14 @@ public class turelweapon : MonoBehaviour
 
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("bullet"))
+        {
+            collision.GetComponent<healths>().TakeDamage(damageEnemy);
+            Destroy(gameObject);
+        }
+    }
 }
+
+

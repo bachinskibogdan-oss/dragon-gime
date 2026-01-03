@@ -89,6 +89,8 @@ public class plauercontrilir : MonoBehaviour
             anim.SetBool("Jump", true);//активируем прыжок
         }
     }
+    
+
 
 
 
